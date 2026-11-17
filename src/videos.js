@@ -11,7 +11,7 @@
 //   Vimeo    — vimeo.com/ID or player.vimeo.com/video/ID
 //   Drive    — drive.google.com/file/d/ID/view or open?id=ID
 //   File     — any .mp4, .webm, or .mov URL, including a path such as videos/my-cut.mp4
-// Weeks 4 through 9 are self-hosted .mov files.
+// Weeks 4 through 10 are self-hosted .mov files.
 // Do not ship videos/week-04.mp4.
 //
 // A file named videos/week-09.mp4 (week-01 … week-14) is a fallback for a week
@@ -89,4 +89,5 @@ window.WEEK_VIDEOS = {
   7: "https://pub-672c007bafa4410aa4cca01e646121a9.r2.dev/Week%207.mov",
   8: "https://pub-672c007bafa4410aa4cca01e646121a9.r2.dev/Week%208.mov",
   9: "https://pub-672c007bafa4410aa4cca01e646121a9.r2.dev/Week%209.mov",
+  10: "https://pub-672c007bafa4410aa4cca01e646121a9.r2.dev/Week%2010.mov",
 };

@@ -1,0 +1,290 @@
+:root {
+  color-scheme: light;
+  --bg: #fff;
+  --ink: #111;
+  --muted: #5c5c5c;
+  --line: #e4e4e4;
+  --wash: #f4f4f4;
+  --frame: #000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #111;
+  color: #fff;
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 3px;
+}
+
+.mast {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 4.75rem 1.75rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1.35rem;
+}
+
+.logo {
+  display: block;
+  width: auto;
+  height: 5.5rem;
+  flex: none;
+}
+
+.mast-copy {
+  min-width: 0;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+
+.lede {
+  max-width: 28rem;
+  margin: 0.85rem 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.status {
+  max-width: 1080px;
+  margin: 2.5rem auto 0;
+  padding: 0 1.75rem;
+  color: var(--muted);
+}
+
+.grid {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 3rem 1.75rem 6rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 3.25rem 1.75rem;
+  align-items: start;
+}
+
+.tile h2 {
+  margin: 0 0 0.85rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.tile[data-kind="rankings"] {
+  grid-column: 1 / -1;
+}
+
+.tile[data-kind="rankings"] details {
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.tile[data-kind="rankings"] summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 0.9rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.tile[data-kind="rankings"] summary::-webkit-details-marker {
+  display: none;
+}
+
+.tile[data-kind="rankings"] summary h2 {
+  margin: 0;
+}
+
+.tile[data-kind="rankings"] .expand {
+  flex: none;
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.tile[data-kind="rankings"] .when-open {
+  display: none;
+}
+
+.tile[data-kind="rankings"] details[open] .when-closed {
+  display: none;
+}
+
+.tile[data-kind="rankings"] details[open] .when-open {
+  display: inline;
+}
+
+.frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--wash);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.frame iframe,
+.frame video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: var(--frame);
+  accent-color: #111;
+}
+
+.placeholder {
+  display: grid;
+  place-items: center;
+}
+
+.placeholder p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+}
+
+.frame.rankings {
+  aspect-ratio: auto;
+  height: auto;
+  overflow: visible;
+  background: #fff;
+  border: 0;
+  border-top: 1px solid var(--line);
+  padding: 1.1rem 1.05rem 0.25rem 0.7rem;
+  max-width: none;
+}
+
+.rankings ol {
+  --pull: 1.75rem;
+  margin: 0;
+  padding: 0 0 0 1.45rem;
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.rankings li {
+  margin: 0 0 0.95rem;
+  padding-left: 0.3rem;
+  overflow-wrap: break-word;
+}
+
+.rankings .name {
+  font-weight: 700;
+}
+
+.rankings .note {
+  font-weight: 400;
+  color: #3a3a3a;
+  white-space: pre-wrap;
+}
+
+.rankings .intro {
+  margin: 0 0 1.05rem;
+  padding-left: 0.15rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.rankings img {
+  display: block;
+  width: calc(100% + var(--pull, 0px));
+  max-width: none;
+  height: auto;
+  margin: 0.8rem 0 0 calc(-1 * var(--pull, 0px));
+  background: var(--wash);
+}
+
+.rankings .subs {
+  --pull: 3.05rem;
+  list-style: disc;
+  color: var(--ink);
+  margin: 0.85rem 0 0.15rem;
+  padding: 0 0 0 1.15rem;
+}
+
+.rankings .subs li {
+  margin: 0 0 0.85rem;
+  padding-left: 0.15rem;
+}
+
+@media (max-width: 640px) {
+  .mast {
+    padding: 2.5rem 1.25rem 0;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+
+  .logo {
+    height: 3.35rem;
+    margin-top: 0.15rem;
+  }
+
+  .status {
+    margin-top: 2rem;
+    padding: 0 1.25rem;
+  }
+
+  .grid {
+    padding: 2.25rem 1.25rem 4rem;
+    gap: 2.25rem;
+    grid-template-columns: 1fr;
+  }
+
+  .frame.rankings {
+    padding: 1.2rem 1rem 0.35rem 0.65rem;
+  }
+
+  .rankings .intro,
+  .rankings ol {
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+
+  .rankings li {
+    margin-bottom: 1.05rem;
+  }
+
+  .rankings .subs {
+    --pull: 2.9rem;
+    margin-top: 0.95rem;
+    padding-left: 1rem;
+  }
+
+  .rankings .subs li {
+    margin-bottom: 0.95rem;
+  }
+}

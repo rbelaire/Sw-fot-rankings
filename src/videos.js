@@ -89,5 +89,5 @@ window.WEEK_VIDEOS = {
   7: "https://pub-672c007bafa4410aa4cca01e646121a9.r2.dev/Week%207.mov",
   8: "https://pub-672c007bafa4410aa4cca01e646121a9.r2.dev/Week%208.mov",
   9: "https://pub-672c007bafa4410aa4cca01e646121a9.r2.dev/Week%209.mov",
-  10: "https://pub-672c007bafa4410aa4cca01e646121a9.r2.dev/Week%2010.mov",
+  10: "https://pub-672c007bafa4410aa4cca01e646121a9.r2.dev/2A2E8BEF-8B88-4D10-909D-07261CDD0270.mov",
 };
